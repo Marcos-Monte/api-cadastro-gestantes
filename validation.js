@@ -5,15 +5,15 @@ import Joi from "joi";
 export const gestanteSchema = (requisicao) => {
     const schema = Joi.object({
         // id: Joi.string().required(),
-        nome: Joi.string().min(0).max(50).required(),
-        data: Joi.string().min(8).max(10).required(),
-        endereco: Joi.string().min(0).max(50).required(),
-        telefone: Joi.string().min(11).max(11).required(),
-        equipe: Joi.string().required()
+        nome: Joi.string().min(1).max(50).required(),
+        data: Joi.date().iso().required(), // Valida que 'data' é uma data no formato ISO
+        endereco: Joi.string().min(1).max(50).required(),
+        telefone: Joi.string().length(11).required(), // Ajuste para length(11) se o telefone tiver exatamente 11 dígitos
+        equipe: Joi.string().valid('azul', 'amarela', 'verde').required() // Valida que 'equipe' deve ser um dos valores válidos
     });
 
     // Validando o modelo
-    const {error} = schema.validate(requisicao, {abortEarly: false});// Não quero que aborte a validação no primeiro erro (Verificar todos os erros)
+    const {error} = schema.validate(requisicao, {abortEarly: false});// Não aborta na primeira falha
 
     return error;
 }

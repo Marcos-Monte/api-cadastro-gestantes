@@ -27,26 +27,29 @@ router.post('/', async (req, res) => {
         return;
     }
 
-    // Adiciona um 'id' randomico ás propriedades do objeto
-    // const novaGestante = {...req.body, "id": randomUUID()};
+    try{
 
-    // Banco de dados recebe um novo registro
-    // gestantes.push(novaGestante);
+        // Criar o novo registro no banco de dados
+        const novaGestante = await prisma.gestante.create({
+            data: {
+                nome: dataGestante.nome,
+                data: dataGestante.data,
+                // data: new Date(dataGestante.data),
+                endereco: dataGestante.endereco,
+                telefone: dataGestante.telefone,
+                equipe: dataGestante.equipe
+            }
+        })
 
-    // Criar o novo registro no banco de dados
-    const novaGestante = await prisma.gestante.create({
-        data: {
-            nome: dataGestante.nome,
-            data: dataGestante.data,
-            // data: new Date(dataGestante.data),
-            endereco: dataGestante.endereco,
-            telefone: dataGestante.telefone,
-            equipe: dataGestante.equipe
-        }
-    })
+        // Responder com o registro criado
+        res.status(201).json(novaGestante)
 
-    // Resposta da requisiçãoo
-    res.status(201).json(novaGestante)
+    } catch (error){
+        
+        // Tratar possíveis erros do banco de dados
+        res.status(500).json({message: 'Erro ao criar registro', error: error.message})
+
+    }
 
 })
 

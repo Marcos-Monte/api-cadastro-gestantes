@@ -1,11 +1,4 @@
-chore: atualizando dependencias do projeto: express, joi e prisma
+fix: arquivo de 'validação' foi alterado: 'nome e endereco' precisam ter ao menos 1 caractere; 'data' é to tipo date e tem atributo iso ; 'telefone' precisa ter exatamente 11 digitos; 'equipe' tem apenas 3 valores validos (azul, verde, amarela)
 
-feat: configurando o projeto, criando o arquivo Prisma Schema (.env, schema.prisma)
+feat: implementado bloco 'try-catch' ao redor das operações de criação de registro e de visualização de dados 
 
-feat: .env, recebe endpoint do banco de dados (MongoDB).
-
-feat:  (comando: npx prisma db push) atualizando o banco de dados para refletir as alterações feitas no esquema Prisma e preparando o Prisma Client para uso no projeto. Agora pode-se usar o Prisma Client para realizar operações no banco de dados MongoDB no seu código.
-
-feat: instação do Prisma Client no projeto. Para consultar podemos usar o comanto 'npx prisma studio' no endpoint 'http://localhost:5555'
-
-feat: importando o 'PrismaClient' as rotas Get e Post. Isso faz com que se possa adicionar e visualizar registros no/do Banco de Dados
