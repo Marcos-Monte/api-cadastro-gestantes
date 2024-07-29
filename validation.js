@@ -4,6 +4,7 @@ import Joi from "joi";
 // Modelo (Schema) que os inputs de dados devem respeitar
 export const gestanteSchema = (requisicao) => {
     const schema = Joi.object({
+        // id: Joi.string().required(),
         nome: Joi.string().min(0).max(50).required(),
         data: Joi.string().min(8).max(10).required(),
         endereco: Joi.string().min(0).max(50).required(),

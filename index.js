@@ -5,7 +5,6 @@ import cadastrarGestante from './routes/post.js';
 
 const server = express();
 
-
 server.use(express.json()); // Toda requisição terá seu corpo convertido para JS
 server.use('/listas', buscarGestantes);
 server.use('/', cadastrarGestante);

@@ -1,1 +1,11 @@
-feat: Primeira versão da API desenvolvida. Duas rotas: GET e POST
+chore: atualizando dependencias do projeto: express, joi e prisma
+
+feat: configurando o projeto, criando o arquivo Prisma Schema (.env, schema.prisma)
+
+feat: .env, recebe endpoint do banco de dados (MongoDB).
+
+feat:  (comando: npx prisma db push) atualizando o banco de dados para refletir as alterações feitas no esquema Prisma e preparando o Prisma Client para uso no projeto. Agora pode-se usar o Prisma Client para realizar operações no banco de dados MongoDB no seu código.
+
+feat: instação do Prisma Client no projeto. Para consultar podemos usar o comanto 'npx prisma studio' no endpoint 'http://localhost:5555'
+
+feat: importando o 'PrismaClient' as rotas Get e Post. Isso faz com que se possa adicionar e visualizar registros no/do Banco de Dados

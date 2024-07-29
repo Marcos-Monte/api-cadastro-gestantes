@@ -1,25 +1,22 @@
 // Dependencias
+import { PrismaClient } from '@prisma/client';
 import express from 'express';
-import { randomUUID } from 'node:crypto';
+// import { randomUUID } from 'node:crypto';
 
 // Componentes
-import gestantes from '../data.js';
 import { gestanteSchema } from '../validation.js';
 
 // Instanciando objeto que irá criar as rotas
 const router = express.Router();
 
-// Método GET: Mostra os registro do Banco de Dados
-router.get('/', (req, res) => {
-    // Resposta da requisição
-    res.status(200).json(gestantes)
-})
-
+// Instanciando objeto de integração com banco de dados
+const prisma = new PrismaClient()
 
 // Método POST: Adicionar novo registro ao Banco de Dados
-router.post('/', (req, res) => {
+router.post('/', async (req, res) => {
     // Armazenando o 'corpo' da requisição
     const dataGestante = req.body;
+
     // Armazenando o resultado da validacao
     const validacao = gestanteSchema(dataGestante);
 
@@ -31,10 +28,22 @@ router.post('/', (req, res) => {
     }
 
     // Adiciona um 'id' randomico ás propriedades do objeto
-    const novaGestante = {...req.body, "id": randomUUID()};
+    // const novaGestante = {...req.body, "id": randomUUID()};
 
     // Banco de dados recebe um novo registro
-    gestantes.push(novaGestante);
+    // gestantes.push(novaGestante);
+
+    // Criar o novo registro no banco de dados
+    const novaGestante = await prisma.gestante.create({
+        data: {
+            nome: dataGestante.nome,
+            data: dataGestante.data,
+            // data: new Date(dataGestante.data),
+            endereco: dataGestante.endereco,
+            telefone: dataGestante.telefone,
+            equipe: dataGestante.equipe
+        }
+    })
 
     // Resposta da requisiçãoo
     res.status(201).json(novaGestante)
