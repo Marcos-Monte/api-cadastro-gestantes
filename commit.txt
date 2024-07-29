@@ -1,0 +1,1 @@
+feat: Primeira versão da API desenvolvida. Duas rotas: GET e POST
