@@ -1,4 +1,4 @@
-fix: arquivo de 'validação' foi alterado: 'nome e endereco' precisam ter ao menos 1 caractere; 'data' é to tipo date e tem atributo iso ; 'telefone' precisa ter exatamente 11 digitos; 'equipe' tem apenas 3 valores validos (azul, verde, amarela)
+chore: biblioteca 'cors (cross-origin resource sharing)' instalada no projeto para que o navegador consiga fazer requisição para a API que está em um domínio diferente
 
-feat: implementado bloco 'try-catch' ao redor das operações de criação de registro e de visualização de dados 
+feat: criada 'url de origin' que pode fazer requisições para a API via 'cors'
 

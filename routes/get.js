@@ -15,15 +15,15 @@ const router = express.Router();
 router.get('/', async (req, res) => {
     const gestantes = await prisma.gestante.findMany();
     try{
-        if(gestantes <= 0){
-            res.status(404).send('Não há dados a serem visualizados');
+        if(!gestantes){
+            res.status(404).json('Não há dados a serem visualizados');
             return;
         }
         // Resposta da requisição
         res.status(200).json(gestantes)
 
     } catch(error){
-        res.status(400).json({message: 'Erro ao visualizar dados', error: error.message})
+        res.status(400).json({message: 'Erro ao visualizar dados'})
     }
 })
 
