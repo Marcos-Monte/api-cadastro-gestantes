@@ -1,4 +1,4 @@
-// Dependencias:
+// Dependencias: Joi = Biblioteca para lidar com validações
 import Joi from "joi";
 
 // Modelo (Schema) que os inputs de dados devem respeitar
@@ -17,10 +17,3 @@ export const gestanteSchema = (requisicao) => {
 
     return error;
 }
-
-
-// "nome": "Mariá Spina",
-// "data": "1997-04-17T00:00:00.000Z",
-// "endereco": "Rua Renata Camara Agondi, nº 86",
-// "telefone": "1996398740",
-// "equipe": "azul"

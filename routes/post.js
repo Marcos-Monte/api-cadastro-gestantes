@@ -1,9 +1,8 @@
 // Dependencias
 import { PrismaClient } from '@prisma/client';
 import express from 'express';
-// import { randomUUID } from 'node:crypto';
 
-// Componentes
+// Modelo de validação do novo registro
 import { gestanteSchema } from '../validation.js';
 
 // Instanciando objeto que irá criar as rotas
@@ -17,10 +16,10 @@ router.post('/', async (req, res) => {
     // Armazenando o 'corpo' da requisição
     const dataGestante = req.body;
 
-    // Armazenando o resultado da validacao
+    // Armazenando o resultado da validacao (true ou false)
     const validacao = gestanteSchema(dataGestante);
 
-    // Em caso de erro: Mostrar qual e parar a requisição
+    // Em caso de 'false': Mostrar qual e parar a requisição
     if(validacao){
         res.status(400).json(validacao.details);
         // Garante que a requisição pare após achar um erro
@@ -53,6 +52,6 @@ router.post('/', async (req, res) => {
 
 })
 
-
+// Exportando para ser utilizado em outros componentes
 export default router;
 
