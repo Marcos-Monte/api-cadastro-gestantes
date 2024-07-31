@@ -1,4 +1,3 @@
-chore: biblioteca 'cors (cross-origin resource sharing)' instalada no projeto para que o navegador consiga fazer requisição para a API que está em um domínio diferente
+fix: alterando 'cors' para que o frontend em produção possa consumir a API
 
-feat: criada 'url de origin' que pode fazer requisições para a API via 'cors'
-
+fix: alterando endpoint das rotas
