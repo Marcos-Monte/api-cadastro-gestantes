@@ -5,8 +5,10 @@ import buscarGestantes from './routes/get.js';
 import cadastrarGestante from './routes/post.js';
 
 const server = express();
+
 server.use(cors({
-    origin: 'https://cadastro-gestantes.vercel.app', //URL do FrontEnd (Next.js)
+    // origin: 'https://cadastro-gestantes.vercel.app', //URL do FrontEnd (Next.js)
+    origin: ['http://localhost:3000','https://apicadastrogestantes.onrender.com' ], //URL do FrontEnd (Next.js)
     methods: ['GET', 'POST', 'PUT', 'DELETE'], // Métodos permitidos
     allowedHeaders: ['Content-Type', 'Authorization'], // Cabeçalhos permitidos
 }))
