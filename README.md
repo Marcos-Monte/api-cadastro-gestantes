@@ -12,7 +12,7 @@ Atribuição às Equipes de Saúde: Gerencia a atribuição de gestantes às equ
 Consulta de Dados: Disponibiliza endpoints para consultar informações sobre gestantes e suas respectivas equipes.
 
 <p align="center">
-     <a href="https://api-cadastro-gestantes.render.com">🌐 Acesse a API</a>
+     <a href="https://apicadastrogestantes.onrender.com/">🌐 Acesse a API</a>
 </p>
 
 <h2 id="tech">💻 Tecnologias</h2>
