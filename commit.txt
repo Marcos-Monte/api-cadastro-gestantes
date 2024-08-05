@@ -1,3 +1,1 @@
-fix: alterando 'cors' para que o frontend em produção possa consumir a API
-
-fix: alterando endpoint das rotas
+feat: criadas rotas para os métodos: Get (por ID), Put e Delete

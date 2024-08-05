@@ -27,5 +27,6 @@ router.get('/', async (req, res) => {
     }
 })
 
+
 // Exportando para ser utilizado em outros componentes
 export default router;

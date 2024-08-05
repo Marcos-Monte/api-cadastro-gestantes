@@ -13,8 +13,8 @@ datasource db {
 // Modelo a ser seguido para armazenar um novo registro no Banco de Dados
 model Gestante {
   id      String   @id @default(auto()) @map("_id") @db.ObjectId
-  data   String   
   nome    String
+  data   String   
   endereco String
   telefone String
   equipe String

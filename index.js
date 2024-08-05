@@ -2,8 +2,11 @@
 import cors from 'cors';
 import express from 'express';
 
+import deletarGestantePorId from './routes/delete.js';
 import buscarGestantes from './routes/get.js';
+import buscarGestantePorId from './routes/getById.js';
 import cadastrarGestante from './routes/post.js';
+import atualizarGestantePorId from './routes/put.js';
 
 // Instanciando métodos da dependencia 'express'
 const server = express();
@@ -21,14 +24,15 @@ server.use(express.json());
 
 //Rotas: 
 // express usar em (origin + rota) a seguinte função (Get, Post)
-server.use('/', buscarGestantes);
+server.use('/', buscarGestantes, buscarGestantePorId, atualizarGestantePorId, deletarGestantePorId);
 server.use('/cadastro', cadastrarGestante);
+// server.use('/:id', buscarGestantePorId);
 
 // Quando rodando localmente, garantir que o servidor está ativo
 server.listen(8000, () => {
     const data = new Date();
     const dia = data.getDate();
-    const mes = data.getMonth();
+    const mes = data.getMonth() + 1;
     const ano = data.getFullYear();
     console.log(`Servidor iniciado em ${dia}/${mes}/${ano}`)
 })
