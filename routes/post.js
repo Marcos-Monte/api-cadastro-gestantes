@@ -33,10 +33,12 @@ router.post('/', async (req, res) => {
             data: {
                 nome: dataGestante.nome,
                 data: dataGestante.data,
-                // data: new Date(dataGestante.data),
                 endereco: dataGestante.endereco,
                 telefone: dataGestante.telefone,
-                equipe: dataGestante.equipe
+                equipe: dataGestante.equipe,
+                parceiro: dataGestante.parceiro,
+                dum: dataGestante.dum,
+                gestacoes: dataGestante.gestacoes,
             }
         })
 

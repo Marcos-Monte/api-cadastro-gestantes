@@ -1,0 +1,11 @@
+# Sempre que for adicionar algum campo novo no Banco de Dados deve seguir o seguinte esquema:
+
+1. Método 1: Usar rm no Git Bash
+Você pode usar o comando rm no Git Bash para excluir o diretório .prisma. Experimente o seguinte comando:
+    - rm -rf node_modules/.prisma
+
+
+2. Depois de remover o diretório .prisma, reinstale as dependências e gere o cliente Prisma novamente:
+     - npm install
+     - npx prisma generate
+
