@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
     const gestantes = await prisma.gestante.findMany();
     try{
         // Se não tiver registros no Banco de dados
-        if(!gestantes){
+        if(gestantes.length === 0){
             res.status(404).json('Não há dados a serem visualizados');
             // Garante que a requisição seja suspensa em caso do erro
             return;

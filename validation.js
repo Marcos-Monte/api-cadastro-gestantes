@@ -10,9 +10,10 @@ export const gestanteSchema = (requisicao) => {
         endereco: Joi.string().min(1).max(100).required(),
         telefone: Joi.string().min(11).required(), // Ajuste para length(11) se o telefone tiver exatamente 11 dígitos
         equipe: Joi.string().valid('azul', 'amarela', 'verde').required(), // Valida que 'equipe' deve ser um dos valores válidos
-        parceiro: Joi.string().min(1).max(50).optional(),
+        parceiro: Joi.string().allow('').optional(), // Permite string vazia e campo opcional
         dum: Joi.date().iso().required(), // Valida que 'data' é uma data no formato ISO
         gestacoes: Joi.number().required(),
+        risco: Joi.string().valid('alto', 'baixo').required(),
     });
 
     // Validando o modelo

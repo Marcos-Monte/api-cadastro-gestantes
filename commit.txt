@@ -1,3 +1,3 @@
-feat: criado documento com observações de como lidar com MongoDB / Prisma
+feat: novo campos criado em: schema.prisma, post e validation. O campo é: risco (string, opcional, valores validos: 'alto' e 'baixo', obrigatorio)
 
-feat: novos campos criados em: schema.prisma, post e validation. Os campos são: parceiro (string, opcional), dum (obrigatorio, data) e gestacoes (obrigatorio, numero inteiro)
+fix: campo 'parceiro' com erro na API ao enviar valor vazio. Agora aceita valores vazios por conta de lógica implementada na validação (Joi = '.allow(''))

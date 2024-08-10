@@ -11,6 +11,10 @@ const router = express.Router();
 // Instanciando objeto de integração com banco de dados
 const prisma = new PrismaClient()
 
+// function teste(valor){
+//     return (!valor)? 'Não Declarado': valor;
+// }
+
 // Método POST: Adicionar novo registro ao Banco de Dados
 router.post('/', async (req, res) => {
     // Armazenando o 'corpo' da requisição
@@ -39,6 +43,7 @@ router.post('/', async (req, res) => {
                 parceiro: dataGestante.parceiro,
                 dum: dataGestante.dum,
                 gestacoes: dataGestante.gestacoes,
+                risco: dataGestante.risco,
             }
         })
 

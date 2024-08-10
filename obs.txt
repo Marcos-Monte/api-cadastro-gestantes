@@ -9,3 +9,4 @@ Você pode usar o comando rm no Git Bash para excluir o diretório .prisma. Expe
      - npm install
      - npx prisma generate
 
+

@@ -21,4 +21,5 @@ model Gestante {
   parceiro String?
   dum   String  
   gestacoes    Int
+  risco String
 }
