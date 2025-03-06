@@ -14,7 +14,7 @@ const server = express();
 // CORS: Garante que aplicações seletas possam consumir a API
 server.use(cors({
     // Quais endereços podem consumir a API
-    origin: ['http://localhost:3000','https://cadastro-gestantes.vercel.app', 'https://cadastro-gestantes-git-master-marcosmontes-projects.vercel.app', 'https://cadastro-gestantes-raeaf981d-marcosmontes-projects.vercel.app' ], //URL do FrontEnd (Next.js)
+    origin: ['http://localhost:3000', 'http://localhost:8080/','https://cadastro-gestantes.vercel.app', 'https://cadastro-gestantes-git-master-marcosmontes-projects.vercel.app', 'https://cadastro-gestantes-raeaf981d-marcosmontes-projects.vercel.app' ], //URL do FrontEnd (Next.js)
     methods: ['GET', 'POST', 'PUT', 'DELETE'], // Métodos permitidos
     allowedHeaders: ['Content-Type', 'Authorization'], // Cabeçalhos permitidos
 }))
